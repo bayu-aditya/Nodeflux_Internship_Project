@@ -5,9 +5,10 @@ import os
 import pandas as pd
 import numpy as np
 from datetime import datetime
+import matplotlib.pyplot as plt
 
-from image_modules.datasets import image_augmentation
-from image_modules.similarity import compareSURF, compareSIFT, compareORB
+from .datasets import image_augmentation
+from .similarity import compareSURF, compareSIFT, compareORB
 
 class benchmark_class():
     def __init__(self, dir_dataset, mode = 'SIFT'):

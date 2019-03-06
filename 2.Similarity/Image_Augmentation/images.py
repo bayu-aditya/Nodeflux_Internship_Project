@@ -147,9 +147,9 @@ class produce_image():
         """
         image = self.img_rgb
         if (mode == 'left'):
-            angle = 5         #degree
+            angle = 10         #degree
         elif (mode == 'right'):
-            angle = -5        #degree
+            angle = -10        #degree
         image_center = tuple(np.array(image.shape[1::-1]) / 2)
         rot_mat = cv2.getRotationMatrix2D(image_center, angle, 1.0)
         img_rotate = cv2.warpAffine(image, rot_mat, image.shape[1::-1],

@@ -1,15 +1,16 @@
 # Author : Bayu Aditya
 
-from image_modules_v2.aug_image_bbox_util import display_augmentation_result
-from image_modules_v2.aug_image_bbox_util import convert_dict, invert_dict
+from .aug_image_bbox_util import display_augmentation_result
+from .aug_image_bbox_util import convert_dict, invert_dict
 
-from image_modules_v2.aug_image_bbox_util import image_augmentation_blur_with_bbox
-from image_modules_v2.aug_image_bbox_util import image_augmentation_intensity_with_bbox
-from image_modules_v2.aug_image_bbox_util import image_augmentation_noise_with_bbox
-from image_modules_v2.aug_image_bbox_util import image_augmentation_rotate_with_bbox
-from image_modules_v2.aug_image_bbox_util import image_augmentation_scale_with_bbox
-from image_modules_v2.aug_image_bbox_util import image_augmentation_shear_with_bbox
-from image_modules_v2.aug_image_bbox_util import image_augmentation_translate_with_bbox
+from .aug_image_bbox_util import image_augmentation_blur_with_bbox
+from .aug_image_bbox_util import image_augmentation_intensity_with_bbox
+from .aug_image_bbox_util import image_augmentation_noise_with_bbox
+from .aug_image_bbox_util import image_augmentation_rotate_with_bbox
+from .aug_image_bbox_util import image_augmentation_scale_with_bbox
+from .aug_image_bbox_util import image_augmentation_shear_with_bbox
+from .aug_image_bbox_util import image_augmentation_translate_with_bbox
+from .aug_image_bbox_util import image_augmentation_rotate_shear_with_bbox
 
 def create_initialization_dict_for_dataset(parameter_mode):
     dict_param = {}
@@ -33,7 +34,8 @@ class augmented_image_class():
             'translate' : ['up', 'down', 'left', 'right'],
             'intensity' : ['glow', 'dark'],
             'noise' : ['gaussian', 's&p', 'speckle'],
-            'blur' : ['very_low', 'low', 'med', 'high']}
+            'blur' : ['very_low', 'low', 'med', 'high'],
+            'rotate_shear' : ['left', 'right']}
         #    'crop' : ['very_low', 'low', 'med', 'high']    # Not yet
         #    }
         

@@ -3,10 +3,10 @@
 import cv2
 import matplotlib.pyplot as plt
 
-from image_modules_v2.bbox_util import *
+from .bbox_util import *
 
-from image_modules_v2.CORE_PaperSpace import *
-from image_modules_v2.CORE_ImageModule_v2 import produce_image
+from .CORE_PaperSpace import *
+from .CORE_ImageModule_v2 import produce_image
 
 def convert_dict(dict_bbox_index):
     """
@@ -162,6 +162,40 @@ def image_augmentation_rotate_with_bbox(img_array, dict_bbox_index, mode = 'left
     dict_bbox_index_ = invert_dict(bboxes_, list_label)
     return img_, dict_bbox_index_
 
+def image_augmentation_rotate_shear_with_bbox(img_array, dict_bbox_index, mode = 'left'):
+    """
+    Parameters
+    ----------
+    img_array : array image from cv2.imread
+    dict_bbox_index : dictionary for bounding box with JSON style
+    mode : 'left', 'right'
+
+    Returns
+    -------
+    img_ : array image augmentation
+    dict_bbox_index_ : dictionary for bounding box with JSON style from image augmentation
+    """
+    # Convert bbox to array
+    list_loc_bbox, list_label = convert_dict(dict_bbox_index)
+    
+    # Image Augmentation Process (need mode and bbox array)
+    if (mode == 'left'):
+        angle = 15
+        scale_shear = -0.8
+    elif (mode == 'right'):
+        angle = -15
+        scale_shear = 0.8
+    
+    #img_, bboxes_ = RandomShear(scale_shear)(img_array.copy(), list_loc_bbox.copy())
+    #img_, bboxes_ = RandomRotate(angle)(img_, bboxes_)
+    
+    img_, bboxes_ = RandomRotate(angle)(img_array.copy(), list_loc_bbox.copy())
+    img_, bboxes_ = RandomShear(scale_shear)(img_, bboxes_)
+    
+    # Invert bbox from array to dictionary
+    dict_bbox_index_ = invert_dict(bboxes_, list_label)
+    return img_, dict_bbox_index_
+    
 def image_augmentation_translate_with_bbox(img_array, dict_bbox_index, mode = 'right'):
     """
     Parameters
