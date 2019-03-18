@@ -180,11 +180,11 @@ def image_augmentation_rotate_shear_with_bbox(img_array, dict_bbox_index, mode =
     
     # Image Augmentation Process (need mode and bbox array)
     if (mode == 'left'):
-        angle = 15
-        scale_shear = -0.8
+        angle = 45
+        scale_shear = -0.3
     elif (mode == 'right'):
-        angle = -15
-        scale_shear = 0.8
+        angle = -45
+        scale_shear = 0.3
     
     #img_, bboxes_ = RandomShear(scale_shear)(img_array.copy(), list_loc_bbox.copy())
     #img_, bboxes_ = RandomRotate(angle)(img_, bboxes_)
