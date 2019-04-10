@@ -46,6 +46,7 @@ Dalam proyek ini, untuk algoritma **image similarity** yang digunakan untuk menc
 - SURF *(Speed Up Robust Features)*
 
 Performa pada algoritma tersebut telah diuji dengan hasil :
+
 |               	| Akurasi    	| Durasi pencocokan antara 2 gambar 	|
 |---------------	|------------	|-----------------------------------	|
 | Hashing Image 	|  53.3333 % 	|                        0.001039 detik |
@@ -58,6 +59,7 @@ Dalam proyek ini, untuk algoritma **text similarity** yang digunakan untuk menco
 - Sequence Matcher Similarity
 
 Performa pada algoritma tersebut telah diuji dengan hasil :
+
 |               	| Akurasi    	| Speed (Duration)	|
 |---------------	|------------	|----------------------------------- |
 | Levensthein Distance 	|  86.1111 % 	|           Fast (0.0629836 sec) |
@@ -96,9 +98,10 @@ Berikut ini merupakan ilustrasi dari cara menggunakannya
 
 ### Hasil Image Augmentation
 Berikut ini merupakan hasil keseluruhan parameter dari augmentasi gambar dengan menggunakan cara diatas.
-**Gambar Asli**
+
+- **Gambar Asli**
 ![Gambar original](image/original.png)
-**Gambar Augmentasi**
+- **Gambar Augmentasi**
 ![Hasil 1](image/bbox_1.png)
 ![Hasil 1](image/bbox_2.png)
 ![Hasil 1](image/bbox_3.png)
