@@ -100,7 +100,9 @@ Berikut ini merupakan ilustrasi dari cara menggunakannya
 Berikut ini merupakan hasil keseluruhan parameter dari augmentasi gambar dengan menggunakan cara diatas.
 
 - **Gambar Asli**
-![Gambar original](image/original.png)
+    ![Gambar original](image/original.png)
+
+
 - **Gambar Augmentasi**
 ![Hasil 1](image/bbox_1.png)
 ![Hasil 1](image/bbox_2.png)
